@@ -152,7 +152,8 @@ def process_image_with_yolo(pic0):
             22: 'salad',
             23: 'squash-patisson',
             24: 'tomato',
-            25: 'vegetable marrow'
+            25: 'vegetable marrow',
+            26: 'ockra'
             }
         
     
