@@ -92,6 +92,7 @@ def process_line(line, image_np):
             23: 'squash-patisson',
             24: 'tomato',
             25: 'vegetable marrow'
+            26: 'okra'
             }
         
         xc, yc, nw, nh = map(float, bresults[1:5])
