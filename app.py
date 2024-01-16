@@ -108,9 +108,9 @@ def main():
                 }
                 choices=['Telugu','Malayalam','Hindi','Kannada','Tamil']
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
-                recipe=st.selectbox('How many different types of recipes you want??',['one','two','three'])
+                recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 if st.button('Generate Recipe'):
-                    final_result=generate_recipe(uniquelist,lan_dcit[language],recipe)
+                    final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     recipe_paragraphs=final_result.split('\n\n')
                     for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         for i in recipe_paragraphs:
