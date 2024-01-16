@@ -111,11 +111,12 @@ def main():
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 if st.button('Generate Recipe'):
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
-                    recipe_paragraphs=final_result.split('\n\n')
-                    for i in range(recip_dict[recipe],recip_dict[recipe]+1):
-                        for i in recipe_paragraphs:
-                            st.write(i)
-                        st.write('-'*100)
+                    #recipe_paragraphs=final_result.split('\n\n')
+                    st.write(fianl_result)
+                    #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
+                        #for i in recipe_paragraphs:
+                            #st.write(i)
+                        #st.write('-'*100)
                             
             else:
                 message()
