@@ -54,14 +54,14 @@ heading_styles = '''
 '''
 
 # Set page config
-st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_icon='🤖', page_title='From Bytes to Bites')
+st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_icon='🤖', page_title='Inclusive Technology')
 
 # Display the custom heading styles
 st.markdown(heading_styles, unsafe_allow_html=True)
 
 # Create the headings
-st.markdown(f'<p class="glowing-heading">🤖 From Bytes to Bites 🤖</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-heading">Deep Learning and AI-Generated Veggie Recipes for Superhero Moms</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="glowing-heading">🤖 Inclusive Technology 🤖</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-heading">Savoring Inclusivity: AI-Crafted Recipes for Unique Tastes and Abilities</p>', unsafe_allow_html=True)
 
 # Image
 st.image('working.jpg',use_column_width=True)
