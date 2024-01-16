@@ -381,7 +381,12 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
 
     prompt += "\nAvoid using any additional vegetables not listed above also make generated recipes unique for every time."
 
-    res = palm.generate_text(prompt=prompt)
+    res = palm.generate_text(prompt=prompt,
+                             model='models/text-bison-001',
+                             temperature=0.9,
+                             max_output_tokens=1000,
+                             top_k=50,
+                             top_p=1.0)
     gt = res.result.replace('*', '')  # Remove asterisk marks
     
     # Translate the generated text to the target language
