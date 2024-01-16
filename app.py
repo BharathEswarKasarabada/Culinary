@@ -112,7 +112,7 @@ def main():
                 if st.button('Generate Recipe'):
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     #recipe_paragraphs=final_result.split('\n\n')
-                    st.write(fianl_result)
+                    st.write(final_result)
                     #for i in range(recip_dict[recipe],recip_dict[recipe]+1):
                         #for i in recipe_paragraphs:
                             #st.write(i)
