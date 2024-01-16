@@ -374,21 +374,15 @@ def process_image_with_yolo_pic2(pic2,image_np2):
             '''
 def generate_recipe(vegetable_dict, target_lang,recipe):
     palm.configure(api_key=st.secrets['key'])
-    prompt = "Create {} delightful and concise recipe in paragraph format using the following vegetables:\n\n".format(recipe)
+    prompt = f"Create {recipe} different taditional Indian recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, and cooking instructions. Please number each recipe (e.g., '1. Dish Name', '2. Dish Name', etc.).\n\nVegetables:\n"
 
     for vegetable, count in vegetable_dict.items():
-        if count == 1:
-            prompt += "How to use a single {}:\n".format(vegetable)
-        else:
-            prompt += "How to use {} {}s:\n".format(count, vegetable)
+        prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
 
-    prompt += "Make sure not to use any new vegetables in your recipes. Your recipes should be both charming and easy to follow, suitable for anyone looking to enjoy quick and tasty dishes."
+    prompt += "\nAvoid using any additional vegetables not listed above also make generated recipes unique for every time."
 
-#    prompt += "Your recipe should be both charming and easy to follow, suitable for anyone looking to enjoy a quick and tasty dish."
-
-    # Generate the recipe text
     res = palm.generate_text(prompt=prompt)
-    gt = res.result
+    gt = res.result.replace('*', '')  # Remove asterisk marks
     
     # Translate the generated text to the target language
     translator = Translator()
