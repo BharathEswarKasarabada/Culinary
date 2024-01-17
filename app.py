@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from gtts import gTTS
 from ultralytics import YOLO
 import streamlit as st
 import cv2
