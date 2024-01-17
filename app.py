@@ -81,11 +81,8 @@ def main():
     
     
    
-    bt1=st.button('Take a picture for prediction')
-    if st.session_state.get('button') != True:
-      st.session_state['button'] = bt1
-    if st.session_state['button'] == True:
-    #if st.checkbox('Take a picture for prediction'):
+    
+    if st.checkbox('Take a picture for prediction'):
     
         
         image, original_image,image_filename= upload()
@@ -115,7 +112,7 @@ def main():
                 language=st.selectbox('Choose the language in which you want the recipe?',choices)
                 recipe=st.selectbox('How many different types of recipes you want??',['1','2','3'])
                 if st.button('Generate Recipe'):
-                    st.session_state['button'] = False
+                    
                     final_result=generate_recipe(uniquelist,lan_dcit[language],int(recipe))
                     #recipe_paragraphs=final_result.split('\n\n')
                     st.write(final_result)
