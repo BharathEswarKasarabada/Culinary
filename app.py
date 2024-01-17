@@ -122,28 +122,24 @@ def main():
                         #for i in recipe_paragraphs:
                             #st.write(i)
                         #st.write('-'*100)
-                    play_audio = st.checkbox("Play Audio")
-
-                    if play_audio:
-                        # Replace 'final_result' with the text you want to convert to audio
-                        text_to_speech = final_result
-                        tts = gTTS(text=text_to_speech, lang=lan_dict[language])
+                    text_to_speech = final_result
+                    tts = gTTS(text=text_to_speech, lang=lan_dict[language])
                     
                         # Save the audio file
-                        audio_path = 'saved_audio.wav'
-                        tts.save(audio_path)
+                    audio_path = 'saved_audio.wav'
+                    tts.save(audio_path)
                     
                         # Play the audio
-                        st.audio(audio_path, format='audio/wav')
+                    st.audio(audio_path, format='audio/wav')
                     
                         # Check if the user wants to clear the audio
-                        if st.button('Clear Audio'):
-                            # Delete the audio file
-                            if os.path.exists(audio_path):
-                                os.remove(audio_path)
-                                st.success("Audio file deleted successfully.")
-                            else:
-                                st.warning("Audio file not found.")
+                    if st.button('Clear Audio'):
+                        # Delete the audio file
+                        if os.path.exists(audio_path):
+                            os.remove(audio_path)
+                            st.success("Audio file deleted successfully.")
+                        else:
+                            st.warning("Audio file not found.")
                                                 
             else:
                 message()
