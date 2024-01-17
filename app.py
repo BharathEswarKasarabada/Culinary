@@ -123,7 +123,7 @@ def main():
                             #st.write(i)
                         #st.write('-'*100)
                     text_to_speech = final_result
-                    tts = gTTS(text=text_to_speech, lang=lan_dict[language])
+                    tts = gTTS(text=text_to_speech, lang=lan_dcit[language])
                     
                         # Save the audio file
                     audio_path = 'saved_audio.wav'
