@@ -130,7 +130,7 @@ def main():
                         # Play the audio
                     st.balloons()
                     with st.spinner('Wait for the audio version................'):
-                        time.sleep(5)
+                        time.sleep(0.05)
                     st.audio(audio_path, format='audio/wav')
                     
                       
