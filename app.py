@@ -4,6 +4,7 @@ from gtts import gTTS
 from ultralytics import YOLO
 import streamlit as st
 import cv2
+import time
 import base64
 import time
 import shutil
@@ -130,6 +131,9 @@ def main():
                     tts.save(audio_path)
                     
                         # Play the audio
+                    st.balloons()
+                    with st.spinner('Wait for the audio version................'):
+                        time.sleep(5)
                     st.audio(audio_path, format='audio/wav')
                     
                       
