@@ -132,14 +132,7 @@ def main():
                         # Play the audio
                     st.audio(audio_path, format='audio/wav')
                     
-                        # Check if the user wants to clear the audio
-                    if st.button('Clear Audio'):
-                        # Delete the audio file
-                        if os.path.exists(audio_path):
-                            os.remove(audio_path)
-                            st.success("Audio file deleted successfully.")
-                        else:
-                            st.warning("Audio file not found.")
+                      
                                                 
             else:
                 message()
