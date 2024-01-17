@@ -382,12 +382,7 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
   
 
-    res = palm.generate_text(prompt=prompt,
-                             model='models/text-bison-001',
-                             temperature=0.9,
-                             max_output_tokens=1000,
-                             top_k=50,
-                             top_p=1.0)
+    res = palm.generate_text(prompt=prompt)
     gt = res.result.replace('*', '')  # Remove asterisk marks
 
     # Translate the generated text to the target language
