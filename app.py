@@ -62,8 +62,8 @@ st.set_page_config(layout="wide", initial_sidebar_state="expanded", page_icon='�
 st.markdown(heading_styles, unsafe_allow_html=True)
 
 # Create the headings
-st.markdown(f'<p class="glowing-heading">🤖 Inclusive Technology 🤖</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-heading">Savoring Inclusivity: AI-Crafted Recipes for Unique Tastes and Abilities</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="glowing-heading">🤖 From Bytes To Bites 🤖</p>', unsafe_allow_html=True)
+st.markdown(f'<p class="sub-heading">Deep Learning and AI-Generated Recipes</p>', unsafe_allow_html=True)
 
 # Image
 st.image('working.jpg',use_column_width=True)
