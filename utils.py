@@ -374,6 +374,7 @@ def process_image_with_yolo_pic2(pic2,image_np2):
             '''
 def generate_recipe(vegetable_dict, target_lang,recipe):
     palm.configure(api_key=st.secrets['key'])
+    palm.set_random_seed()
     prompt = f"Create {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, and cooking instructions. Numbered each recipe\n\nIngredients:\n"
 
     for vegetable, count in vegetable_dict.items():
