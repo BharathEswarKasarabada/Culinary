@@ -91,10 +91,8 @@ def main():
                 #image1=cv2.imread(image)
             pic0=image
             uniquelist=process_image_with_yolo(pic0)
-            if uniquelist:
-                    
-                for i,j in uniquelist.items():
-                    
+            if uniquelist:       
+                for i in uniquelist:
                     st.write(uniquelist)
                 lan_dcit={
                         'Telugu':'te',
@@ -142,7 +140,7 @@ def main():
             
 
    
-if __name__ == '__main__':
+if _name_ == '_main_':
     
    
     main()
