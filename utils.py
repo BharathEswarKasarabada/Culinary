@@ -32,14 +32,14 @@ def main_model():
 
         
 def message():
-    st.warning('⚠️Please check your image')
-    st.info("📷✨ **Encountering the 'Please check your image' error?**")
+    st.warning('⚠Please check your image')
+    st.info("📷✨ *Encountering the 'Please check your image' error?*")
     st.write("""
             Our algorithm may not have been able to predict the content of your image. To improve results, consider the following:
-            👉 **Verify image quality and resolution.**
-            👉 **Ensure the image is clear and well-lit.**
-            👉 **Check if the image meets our specified format requirements.**
-            👉 **Consider alternative images for better results.**
+            👉 *Verify image quality and resolution.*
+            👉 *Ensure the image is clear and well-lit.*
+            👉 *Check if the image meets our specified format requirements.*
+            👉 *Consider alternative images for better results.*
             Our aim is to provide accurate predictions, and addressing these aspects can make a significant difference. If the issue persists, please reach out to our support team. We're here to help! 🤝🔧
             """)
 
@@ -205,7 +205,7 @@ def process_image_with_yolo(pic0):
                 labels_count[label] += 1
             else:
                 labels_count[label] = 1
-        labelslist=[]
+       # labelslist=[]
         
         try:
             if os.path.exists('runs'):
@@ -217,7 +217,7 @@ def process_image_with_yolo(pic0):
         
               
     
-    return labels_count
+    return labelslist
         
                 
                 
@@ -372,15 +372,14 @@ def process_image_with_yolo_pic2(pic2,image_np2):
 
             
             '''
-def generate_recipe(vegetable_dict, target_lang,recipe):
+def generate_recipe(vegetable_list, target_lang,recipe):
     api_key='AIzaSyDodtnYlNnIVTfSmdl-Md_P4jnmnxv6h5U'
     palm.configure(api_key=api_key)
     #palm.set_random_seed()
     prompt = f"Create {recipe} delightful and concise recipes using the following vegetables. Each recipe should include a dish name, a list of ingredients, and cooking instructions. Numbered each recipe\n\nIngredients:\n"
 
-    for vegetable, count in vegetable_dict.items():
-        prompt += f"- {vegetable} ({count} {'piece' if count == 1 else 'pieces'})\n"
-
+    for vegetable in vegetable_list:
+        prompt += f"- {vegetable}\n"
     prompt += "\nYour recipes should only use the mentioned vegetables. Be creative, and make the instructions clear and easy to follow. These recipes should be suitable for anyone looking to enjoy quick and tasty dishes."
   
 
@@ -392,4 +391,3 @@ def generate_recipe(vegetable_dict, target_lang,recipe):
     translated_text = translator.translate(gt, src='en', dest=target_lang)
     
     return translated_text.text
-    
