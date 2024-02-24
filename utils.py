@@ -40,7 +40,7 @@ def message():
             👉 *Ensure the image is clear and well-lit.*
             👉 *Check if the image meets our specified format requirements.*
             👉 *Consider alternative images for better results.*
-            Our aim is to provide accurate predictions, and addressing these aspects can make a significant difference. If the issue persists, please reach out to our support team. We're here to help! 🤝🔧
+            Our aim is to provide accurate predictions, and addressing these aspects can make a significant difference.
             """)
 
 def upload():
